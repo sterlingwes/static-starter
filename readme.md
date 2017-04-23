@@ -15,7 +15,8 @@ A Starter Template complete with Gulp, Sass, a grid system, and all the fixings 
 
 Please make sure you have these installed on your machine before getting started:
 
-- [Node](https://nodejs.org/en/))
+- [Node](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/en/) (if you want)
 
 ## Conventions & Code Style:
 

@@ -8,7 +8,7 @@ A Starter Template complete with Gulp, Sass, a grid system, and all the fixings 
 
 1. `git clone https://github.com/justinechiu/static-starter.git`
 1. `cd static-starter`
-1. `yarn install` or `npm install`
+1. `npm install`
 1. `gulp` (your browser should automatically open up to `http://localhost:3000`)
 
 ## Dependencies:
@@ -16,7 +16,6 @@ A Starter Template complete with Gulp, Sass, a grid system, and all the fixings 
 Please make sure you have these installed on your machine before getting started:
 
 - [Node](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/en/) (if you want)
 
 ## Conventions & Code Style:
 

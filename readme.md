@@ -10,6 +10,11 @@ A Starter Template complete with Gulp, Sass, a grid system, and all the fixings 
 1. `cd static-starter`
 1. `npm install`
 1. `gulp` (your browser should automatically open up to `http://localhost:3000`)
+1. Develop on the `index.html` file and the `/dev` folder, never the `/public` folder. Otherwise, changes will be overwritten.
+
+# Additional Notes
+
+- When you're ready to upload your stuff, upload everything in the `/public` folder.
 
 ## Dependencies:
 

@@ -2,6 +2,8 @@
 
 A Starter Template complete with Gulp, Sass, a grid system, and all the fixings for a nifty static HTML site.
 
+![screenshot](https://raw.githubusercontent.com/justinechiu/static-starter/screenshot.png)
+
 # Getting Started
 
 1. `git clone https://github.com/justinechiu/static-starter.git`

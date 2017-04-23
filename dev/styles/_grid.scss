@@ -1,0 +1,98 @@
+// Parent div, always needed for a grid
+.grid {
+  font-size: 0;
+  margin-left: $gutter * -1;
+
+  & > * {
+    padding-left: $gutter;
+    text-align: left;
+    vertical-align: top;
+    display: inline-block;
+    font-size: $base-font-size;
+  }
+}
+
+// Add to .grid to align all grid items to the middle of row
+.grid--middle {
+  & > * {
+    vertical-align: middle;
+  }
+}
+
+.grid--bottom {
+  & > * {
+    vertical-align: bottom;
+  }
+}
+
+// Add to .grid to align any leftover grid items to the center
+.grid--center {
+  text-align: center;
+}
+
+.grid--full {
+  margin-left: 0;
+
+  > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.grid--narrow {
+  margin-left: $gutter / -3;
+
+  > * {
+    padding-left: $gutter / 3;
+    padding-right: $gutter / 3;
+  }
+}
+
+.grid--rev {
+  direction: rtl;
+
+  > * {
+    direction: ltr;
+  }
+}
+
+
+@mixin media($breakpoint) {
+  $keyIndex: index($breakpoints, $breakpoint);
+  @if ($keyIndex) {
+    $valueIndex: $keyIndex + 1;
+    $mediaQuery: nth($breakpoints, $valueIndex);
+      @media #{$mediaQuery} {
+      @content;
+    }
+  }
+}
+
+@mixin grid-item($width: 1, $total: 1, $breakpoint: ""){
+  $itemWidth: $width / $total * 100%;
+  
+  @if $breakpoint != "" {
+    @include media($breakpoint) {
+      .grid-#{$width}of#{$total}--#{$breakpoint} {
+        width: $itemWidth;
+      }
+    }
+  }
+
+  @else {
+    .grid-#{$width}of#{$total} {
+      width: $itemWidth;
+    }
+  }
+}
+
+// Place grid mixins here as needed:
+@include grid-item(1, 1);
+@include grid-item(1, 2);
+@include grid-item(1, 3);
+@include grid-item(1, 4);
+@include grid-item(1, 1, "portable");
+@include grid-item(1, 2, "portable");
+@include grid-item(1, 3, "portable");
+@include grid-item(1, 1, "palm");
+@include grid-item(1, 2, "palm");

@@ -1,0 +1,85 @@
+///////////////////////
+//// BASE SETTINGS ////
+///////////////////////
+$base-font-size: 17px;
+$gutter: 20px;
+$container-width: 1100px;
+
+/////////////////////
+//// BREAKPOINTS ////
+/////////////////////
+$breakpoints: (
+  palm '(max-width: 600px)'
+  portable '(max-width: 1024px)'
+  lap '(min-width: 601px) and (max-width: 1366px)'
+  desk '(min-width: 1025px)'
+  monitor '(min-width: 1920px)'
+);
+
+$mobile-nav-breakpoint: 800px;
+
+//////////////////
+//// COLOURS ////
+/////////////////
+$blue: #0051A5;
+$blue-light: #6AADE4;
+$blue-dark: #003168;
+$yellow: #FEDF01;
+
+$primary: $blue; 
+$secondary: $blue-light;
+$tertiary: $yellow;
+
+$white: #FFFFFF;
+$black: #1A1A1A;
+$grey-dark: #313131;
+$grey: #C4C4C4;
+$grey-light: #F9F9F9;
+$grey-border: #979797;
+$grey-form-text: $grey-border;
+
+$error-color: #B91A0E;
+$warning-color: #ED9213;
+$success-color: #22CD73;
+$notice-color: #F5FCFF;
+
+$base-background-color: $white;
+
+// LINK COLORS
+$base-link-color: $primary;
+$hover-link-color: $blue-dark;
+
+///////////////////////////////
+//// TYPEPOGRAPHY SETTINGS ////
+///////////////////////////////
+$sans-serif: 'Helvetica Neue', 'Arial', sans-serif;
+$serif: 'Georgia', 'Garamond', serif;
+$bold: 700;
+$medium: 500;
+$normal: 400;
+$light: 300;
+$base-line-height: 1;
+$paragraph-line-height: 1.6;
+$base-font-color: $grey-dark;
+
+/////////////////////////////
+//// TRANSITION SETTINGS ////
+/////////////////////////////
+
+// GLOBAL TRANSITION DURATION
+$trans-dur: 0.2s;
+
+// EASING
+$base-ease: ease-in-out;
+$nice-ease: cubic-bezier(0.4, 0, 0.2, 1);
+$bounce-ease: cubic-bezier(0.45, -0.6, 0.605, 1.565);
+$base-trans: all $base-ease $trans-dur;
+$nice-trans: all $nice-ease $trans-dur;
+$border-trans: border-color $nice-ease $trans-dur;
+
+/////////////////
+//// BORDERS ////
+/////////////////
+$input-border: 1px solid $grey-border;
+$input-focus-border: 2px solid $primary;
+$input-error-border: 2px solid $error-color;

@@ -1,9 +1,21 @@
 @import 'normalize';
-@import 'variables';
-@import 'mixins';
-@import 'grid';
+@import 'initializers/variables';
+@import 'initializers/mixins';
+@import 'initializers/grid';
+@import 'initializers/typography';
 @import 'layout';
 @import 'container';
 @import 'combo';
-@import 'typography';
 @import 'forms';
+
+// import all our base global styles
+// @import "initializers/initializersImport";
+
+// import our site specific/object styles
+// @import "components/*";
+
+//import any page specific styles
+// @import "pages/**/*";
+
+// import these last to ensure they are honoured.
+// @import "initializers/utilityClasses";

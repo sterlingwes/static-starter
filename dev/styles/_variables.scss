@@ -38,7 +38,8 @@ $grey-light: #F9F9F9;
 $grey-border: #979797;
 $grey-form-text: $grey-border;
 
-$error-color: #B91A0E;
+$color-error: #B91A0E;
+$color-error-bg: #B4D455;
 $warning-color: #ED9213;
 $success-color: #22CD73;
 $notice-color: #F5FCFF;
@@ -50,7 +51,7 @@ $base-link-color: $primary;
 $hover-link-color: $blue-dark;
 
 ///////////////////////////////
-//// TYPEPOGRAPHY SETTINGS ////
+//// TYPOGRAPHY SETTINGS ////
 ///////////////////////////////
 $sans-serif: 'Helvetica Neue', 'Arial', sans-serif;
 $serif: 'Georgia', 'Garamond', serif;
@@ -82,4 +83,10 @@ $border-trans: border-color $nice-ease $trans-dur;
 /////////////////
 $input-border: 1px solid $grey-border;
 $input-focus-border: 2px solid $primary;
-$input-error-border: 2px solid $error-color;
+$input-error-border: 2px solid $color-error;
+$color-border: #B4D455;
+$color-disabled: #B4D457;
+$color-disabled-border: #B4D456;
+
+
+$svg-select-icon: 'change-this.svg';

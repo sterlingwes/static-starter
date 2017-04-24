@@ -1,0 +1,61 @@
+.combo {
+  display: table;
+  width: 100%;
+  > .combo-first {
+    width: 0;
+    white-space: nowrap;
+    padding-right: $gutter;
+  }
+  > .combo-last {
+    width: 100%;
+  }
+}
+.combo-first, .combo-last {
+  display: table-cell;
+  vertical-align: top;
+}
+.combo--rev {
+  > .combo-first {
+    width: 100%;
+    white-space: normal;
+    padding-right: 0;
+  }
+  > .combo-last {
+    width: 0;
+    white-space: nowrap;
+    padding-left: $gutter;
+  }
+}
+.combo--middle {
+  > .combo-first, > .combo-last {
+    vertical-align: middle;
+  }
+}
+.combo--full {
+  > .combo-first, > .combo-last {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.combo--stack--portable {
+  @include media(portable) {
+    display: block;
+    .combo-first,
+    .combo-last {
+      display: block;
+      width: auto;
+      padding: 0;
+    }
+  }
+}
+.combo--stack--palm {
+  @include media(palm) {
+    display: block;
+    .combo-first,
+    .combo-last {
+      display: block;
+      width: auto;
+      padding: 0;
+    }
+  }
+}

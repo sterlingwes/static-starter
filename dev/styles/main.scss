@@ -1,12 +1,13 @@
-@import 'normalize';
+@import 'initializers/normalize';
+@import 'initializers/setup';
 @import 'initializers/variables';
 @import 'initializers/mixins';
 @import 'initializers/grid';
 @import 'initializers/typography';
-@import 'layout';
-@import 'container';
-@import 'combo';
-@import 'forms';
+@import 'initializers/combo';
+@import 'components/layout';
+@import 'components/container';
+@import 'components/forms';
 
 // import all our base global styles
 // @import "initializers/initializersImport";

@@ -1,10 +1,6 @@
-header, section {
-  max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 30px 0;
-
-  @include media(palm) {
-    padding: 15px 0;
-  }
+header {
+  // layout styles here
+  // background-color: yellow;
+  // height: 100vh;
+  padding: 60px 0 30px;
 }

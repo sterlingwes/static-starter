@@ -1,0 +1,22 @@
+$container-width: 1000px; // arbituary number, change this later
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  border-bottom: 1px solid transparent; // prevent margin-collapse of children
+  @media (max-width: $container-width) {
+    padding: 0 40px;
+  }
+  @include media(palm) {
+    padding: 0 20px;
+  }
+}
+.container--narrow {
+  padding: 0 80px;
+  @media (max-width: $mobile-nav-breakpoint) {
+    padding: 0 40px;
+  }
+  @include media(palm) {
+    padding: 0 20px;
+  }
+}

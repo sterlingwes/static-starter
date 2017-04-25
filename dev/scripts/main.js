@@ -1,3 +1,2 @@
-const ohHey = "Hello World";
-
-console.log(ohHey);
+import { say, message } from './utils';
+say(message);

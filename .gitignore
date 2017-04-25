@@ -35,6 +35,10 @@ Thumbs.db
 *.sql
 *.sqlite
 
+# IDE Config #
+##############
+/.vscode
+
 # Custom #
 ######################
 *.sublime-project

@@ -1,3 +1,3 @@
-const ohHey = "Hello World";
+import { say, message } from './utils'
 
-console.log(ohHey);
+say(message)

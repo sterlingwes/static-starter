@@ -1,7 +1,7 @@
 const gulp = require('gulp');
+const { rollup } = require('rollup');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-const babel = require('gulp-babel');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
@@ -9,7 +9,7 @@ const reload = browserSync.reload;
 gulp.task('browser-sync', () => {
   browserSync.init({
     server: './public'
-  })
+  });
 });
 
 gulp.task('styles', () => {
@@ -17,30 +17,32 @@ gulp.task('styles', () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(concat('style.css'))
-    .pipe(gulp.dest('./public/styles'))
+    .pipe(gulp.dest('./public'))
     .pipe(reload({stream: true}));
 });
 
+let cache;
 gulp.task('scripts', () => {
-  gulp.src('./dev/scripts/main.js')
-    .pipe(babel({
-      presets: ['es2015']
-    }))
-    .pipe(gulp.dest('./public/scripts'))
-    .pipe(reload({stream: true}));
+  const jsConfig = require('./rollup.config');
+  Object.assign(jsConfig, { cache });
+  return rollup(jsConfig)
+    .then(bundle => {
+      cache = bundle;
+      return bundle.write(jsConfig);
+    })
+    .then(() => reload());
 });
 
 gulp.task('site', () => {
-  gulp.src('./dev/index.html')
+  return gulp.src('./dev/index.html')
     .pipe(gulp.dest('./public'))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('watch', () => {
   gulp.watch('./dev/styles/**/*.scss', ['styles']);
-  gulp.watch('./dev/scripts/main.js', ['scripts']);
+  gulp.watch('./dev/scripts/**/*.js', ['scripts']);
   gulp.watch('./dev/index.html', ['site']);
-  gulp.watch('./**/*.html', reload);
 });
 
 gulp.task('default', ['styles', 'scripts', 'browser-sync', 'site', 'watch']);
